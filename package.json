@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.28",
+    "yarn": "^1.22.19"
+  },
+  "name": "sequelize-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/matheusrodacki/sequelize-api",
+  "author": "matheusrodacki",
+  "license": "MIT"
+}
