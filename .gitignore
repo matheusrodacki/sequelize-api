@@ -134,3 +134,6 @@ replit*
 .replit
 replit.nix
 .breakpoints
+
+#sequelize
+/api/config/config.json
