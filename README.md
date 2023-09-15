@@ -4,6 +4,6 @@
 
 > Repository created for learning and develop a Node.js REST API with Sequilize ORM.
 
-This project is based on Alura's course: [ORM com NodeJS: API com Sequelize e MySQL](https://cursos.alura.com.br/course/orm-nodejs-api-sequelize-mysql).
+This project is based on Alura's course: [ORM com NodeJS: avançando nas funcionalidades do Sequelize](https://cursos.alura.com.br/course/orm-nodejs-avancando-sequelize).
 
 My profile on Alura: [Matheus Rodacki](https://cursos.alura.com.br/user/matheus-rodacki)
