@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Niveis.hasMany(models.Turmas, {
-        foreignKey: 'nivel_id'
+        foreignKey: "nivel_id",
       });
     }
   }
@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Niveis",
+      paranoid: true,
     }
   );
   return Niveis;
