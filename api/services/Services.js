@@ -12,7 +12,9 @@ class Services {
   async pegaUmRegistro(id) {
     return await database[this.nomeDoModelo].findOne({ where: { id: id } });
   }
-  async criaRegistro(dados) {}
+  async criaRegistro(dados) {
+    return await database[this.nomeDoModelo].create(dados);
+  }
 
   async atualizaRegistro(dadosAtualizados, id, transacao = {}) {
     return await database[this.nomeDoModelo].update(dadosAtualizados, {

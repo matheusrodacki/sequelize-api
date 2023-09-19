@@ -38,7 +38,6 @@ module.exports = (sequelize, DataTypes) => {
             args: true,
             msg: "dado do tipo email inválido.",
           },
-          unique: true,
         },
       },
       role: DataTypes.STRING,
