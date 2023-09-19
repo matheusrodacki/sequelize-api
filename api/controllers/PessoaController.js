@@ -64,7 +64,7 @@ class PessoaController {
     const { id } = req.params;
     const novasInfos = req.body;
     try {
-      await pessoasServices.atualizaRegistro(novasInfos, id);
+      await pessoasServices.atualizaRegistro(novasInfos, Number(id));
       const pessoaAtualizada = await pessoasServices.pegaUmRegistro(id);
       return res.status(200).json(pessoaAtualizada);
     } catch (error) {
