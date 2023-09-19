@@ -21,7 +21,7 @@ class TurmaController {
   static async pegaUmaTurma(req, res) {
     const { id } = req.params;
     try {
-      const turma = await turmasServices.pegaUmRegistro(id);
+      const turma = await turmasServices.pegaUmRegistro({ id });
       return res.status(200).json(turma);
     } catch (error) {
       return res.status(500).json(erro.message);

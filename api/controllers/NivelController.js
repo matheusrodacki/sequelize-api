@@ -15,7 +15,7 @@ class NivelController {
   static async pegaUmNivel(req, res) {
     const { id } = req.params;
     try {
-      const nivel = await niveisServices.pegaUmRegistro(id);
+      const nivel = await niveisServices.pegaUmRegistro({ id });
       return res.status(200).json(nivel);
     } catch (error) {
       return res.status(500).json(erro.message);
