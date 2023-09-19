@@ -1,5 +1,3 @@
-//const database = require("../models");
-//const sequelize = require("sequelize");
 const { PessoasServices } = require("../services");
 const pessoasServices = new PessoasServices();
 
