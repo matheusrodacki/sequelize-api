@@ -44,7 +44,7 @@ class PessoaController {
   static async restauraPessoa(req, res) {
     const { id } = req.params;
     try {
-      await database.Pessoas.restore({ where: { id: Number(id) } });
+      await pessoasServices.restauraRegistro(id);
       return res.status(200).json({ mensage: `id ${id} restaurado` });
     } catch (error) {
       return res.status(500).json(error.message);
@@ -67,10 +67,8 @@ class PessoaController {
     const { id } = req.params;
     const novasInfos = req.body;
     try {
-      await database.Pessoas.update(novasInfos, { where: { id: Number(id) } });
-      const pessoaAtualizada = await database.Pessoas.findOne({
-        where: { id: Number(id) },
-      });
+      await pessoasServices.atualizaRegistro(novasInfos, id);
+      const pessoaAtualizada = await pessoasServices.pegaUmRegistro(id);
       return res.status(200).json(pessoaAtualizada);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -80,7 +78,7 @@ class PessoaController {
   static async deletaPessoa(req, res) {
     const { id } = req.params;
     try {
-      await database.Pessoas.destroy({ where: { id: Number(id) } });
+      await pessoasServices.apagaRegistro(id);
       return res.status(200).json({ mensage: `id ${id} deletado` });
     } catch (error) {
       return res.status(500).json(error.message);

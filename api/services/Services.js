@@ -28,8 +28,28 @@ class Services {
       transacao,
     });
   }
-  async apagaRegistro(id) {}
-  async cancelaRegistro(id) {}
+  async apagaRegistro(id) {
+    return await database[this.nomeDoModelo].destroy({ where: { id: id } });
+  }
+  async restauraRegistro(id) {
+    return await database[this.nomeDoModelo].restore({ where: { id: id } });
+  }
+  async consultaRegistroApagado(id) {
+    return database[this.nomeDoModelo].findOne({
+      paranoid: false,
+      where: {
+        id: Number(id),
+      },
+    });
+  }
+  async encontraEContaRegistros(where = {}, agregadores) {
+    return await database[this.nomeDoModelo].findAndCountAll({
+      where: {
+        ...where,
+      },
+      ...agregadores,
+    });
+  }
 }
 
 module.exports = Services;
