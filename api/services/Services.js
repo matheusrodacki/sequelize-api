@@ -5,7 +5,7 @@ class Services {
     this.nomeDoModelo = nomeDoModelo;
   }
 
-  async pegaTodosOsRegistros() {
+  async pegaTodosOsRegistros(where = {}) {
     return await database[this.nomeDoModelo].findAll();
   }
 
